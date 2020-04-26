@@ -12,12 +12,13 @@ import java.util.Arrays;
 // [0, 0, 0, 0, 1, 1, 1]
 
 // 1. Input: What is the input parameter? => int arr[]
-// 2. Output: What should the datatype of your answer that your function has to return ? => void
+// 2. Output: What is the datatype of your answer that your function has to return ? => void
 // 3. What data structures and methods associated with it will be used
 // 4. Where are you going to store temp data ( if needed )
 // 5. Describe model of your algorithm before implementing solution in code
 // 6. Write unit tests for your solution -- think about edge cases
-// 7. Complexity?
+// 7. Runtime Complexity?
+// 8. Memory Complexity?
 
 public class SortArrayOfZeroOnes {
 

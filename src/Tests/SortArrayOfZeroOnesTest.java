@@ -3,8 +3,6 @@ package Tests;
 import Algos.SortArrayOfZeroOnes;
 import org.junit.Assert;
 
-import java.util.Arrays;
-
 class SortArrayOfZeroOnesTest {
 
     @org.junit.jupiter.api.Test
