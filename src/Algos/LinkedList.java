@@ -49,4 +49,51 @@ public class LinkedList {
         node.val = node.next.val;
         node.next = node.next.next;
     }
+
+    public boolean hasCycle(ListNode head) {
+
+        if (head == null || head.next == null) {
+            return false;
+        }
+
+        ListNode slow = head;
+        ListNode fast = head.next;
+
+        while (slow != fast) {
+            if (fast == null || fast.next == null) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        return true;
+
+        // TIME: O(n)
+        // MEMORY: O(1)
+    }
+
+    public ListNode oddEvenList(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode odd = head;
+        ListNode even = head.next;
+        ListNode evenHead = even;
+
+        while (even != null || even.next != null) {
+            odd.next = even.next;
+            odd = odd.next;
+            even.next = odd.next;
+            even = even.next;
+        }
+
+        odd.next = evenHead;
+        return head;
+
+        // TIME: O(n)
+        // MEMORY: O(1)
+    }
+
 }

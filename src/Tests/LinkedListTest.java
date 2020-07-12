@@ -2,6 +2,7 @@ package Tests;
 
 import Algos.LinkedList;
 import Algos.ListNode;
+import org.junit.Assert;
 
 public class LinkedListTest {
 
@@ -66,5 +67,44 @@ public class LinkedListTest {
         linkedList.deleteNode(fourth);
 
         linkedList.printLinkedList();
+    }
+
+
+    @org.junit.jupiter.api.Test
+    void cycleTest() {
+        ListNode first = new ListNode(1);
+        ListNode second = new ListNode(2);
+        ListNode third = new ListNode(3);
+        ListNode fourth = new ListNode(4);
+        ListNode fifth = new ListNode(5);
+
+        LinkedList linkedList = new LinkedList();
+        linkedList.head = first;
+        first.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = second;
+
+        boolean hasCycle = linkedList.hasCycle(linkedList.head);
+        Assert.assertTrue(hasCycle);
+    }
+
+    @org.junit.jupiter.api.Test
+    void noCycleTest() {
+        ListNode first = new ListNode(1);
+        ListNode second = new ListNode(2);
+        ListNode third = new ListNode(3);
+        ListNode fourth = new ListNode(4);
+        ListNode fifth = new ListNode(5);
+
+        LinkedList linkedList = new LinkedList();
+        linkedList.head = first;
+        first.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = fifth;
+
+        boolean hasCycle = linkedList.hasCycle(linkedList.head);
+        Assert.assertFalse(hasCycle);
     }
 }
